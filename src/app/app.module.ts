@@ -11,10 +11,14 @@ import { AppComponent } from './app.component';
 //Servicios
 import { HttpClientModule } from '@angular/common/http'
 import { DatabaseService } from './services/database.service';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

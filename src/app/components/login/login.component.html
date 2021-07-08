@@ -1,0 +1,39 @@
+<!---------------------------------------------CONTENEDOR DE REGISTRO-------------------------------------------------------------->
+<div class="row">
+    <div class="col-sm-4">
+        <h2 class="title">Ingresar</h2>  
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <form #user_form="ngForm">
+                    <!--EMAIL-->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="example@gmail.com"
+                            name='email'
+                            #name="ngModel"
+                            [(ngModel)]='login.email'
+                            required
+                        >
+                    </div>
+                    <!--CONTRASEÑA DE USUARIO-->  
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input 
+                            type="password" 
+                            class="form-control"
+                            name='password'
+                            #password="ngModel"
+                            [(ngModel)]='login.password'
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                    <button type="button" class="btn btn-primary" routerLink="">Volver</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
