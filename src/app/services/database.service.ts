@@ -12,6 +12,7 @@ export class DatabaseService {
 
   constructor(private servidor:HttpClient) { }
 
+  //CRUD
   //CREATE
   public postAddUser(user:UserModel){
     return this.servidor.post(`${this.url}/add`, user);
@@ -27,5 +28,11 @@ export class DatabaseService {
   //DELETE
   public deleteUser(email:string){
     return this.servidor.delete(`${this.url}/users/${email}`);
+  }
+
+  //LOGIN
+  public loginUser(user: UserModel){
+    
+
   }
 }

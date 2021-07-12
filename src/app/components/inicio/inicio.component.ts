@@ -12,8 +12,7 @@ export class InicioComponent implements OnInit {
 
   public user: UserModel; //Para la creacion de formulario
   public usuarios!:UserModel[]; //Para Ver y Borrar
-
-
+  
   constructor(private servidor:DatabaseService) {
     this.user = new UserModel; 
   }

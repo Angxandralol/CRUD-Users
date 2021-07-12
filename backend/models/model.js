@@ -1,7 +1,7 @@
 const database = require('../database/db.config');
 
 class Peticiones{
-
+    //CRUD
     async postaddUser(name, email, password){
         const respuesta = await database.query(
             `INSERT INTO Usuario (name, email, password) VALUES ($1, $2, $3);`, 
@@ -36,6 +36,16 @@ class Peticiones{
         console.log(password);
         return respuesta;
     }   
+
+    //LOGIN
+    async postLoginUser(email, password){
+        const respuesta = await database.query(
+            ``
+        );
+    }
+
+
+
 }
 
 const peticion = new Peticiones();
