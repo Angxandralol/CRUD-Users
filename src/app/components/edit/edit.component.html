@@ -4,7 +4,7 @@
         <h2 class="title">Actualizar Usuarios</h2>  
         <div class="card" style="width: 20rem;">
             <div class="card-body">
-                <form #user_form="ngForm" (ngSubmit)="updateUser(user_form)">
+                <form #update_form="ngForm">
                     <!--NOMBRE DE USUARIO-->
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -30,7 +30,7 @@
                             required
                         >
                     </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" (click)="getUser(update_form)">Save</button>
                     <button type="button" class="btn btn-primary" routerLink="">Cancel</button>
                 </form>
             </div>

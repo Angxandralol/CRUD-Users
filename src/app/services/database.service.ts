@@ -20,6 +20,9 @@ export class DatabaseService {
   public getAllUser(){
     return this.servidor.get(`${this.url}/users`);
   }
+  public getUser(email:string){
+    return this.servidor.get(`${this.url}/user/${email}`);
+  }
   //UPDATE
   public putUpdateUser(email:string, user:UserModel){
     return this.servidor.put(`${this.url}/update/${email}`,user);
@@ -27,5 +30,9 @@ export class DatabaseService {
   //DELETE
   public deleteUser(email:string){
     return this.servidor.delete(`${this.url}/users/${email}`);
+  }
+  //LOGIN
+  public login(user:UserModel){
+    return this.servidor.post(`${this.url}/autenticar`, user);
   }
 }

@@ -42,6 +42,7 @@ export class InicioComponent implements OnInit {
   public getAllUser(){
     this.servidor.getAllUser().subscribe(data=>{
       this.usuarios = data as UserModel[];
+      //console.log(this.usuarios);
     })
   }
 

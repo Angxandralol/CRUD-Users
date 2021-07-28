@@ -17,6 +17,14 @@ class Peticiones{
         return respuesta;
     }
 
+    async getUser(email){
+        const respuesta = await database.query(
+            `SELECT * FROM Usuario WHERE email=$1;`, 
+            [email]
+        );
+        return respuesta;
+    }
+
     async deleteUser(email){
         const respuesta = await database.query(
             `DELETE FROM Usuario WHERE email=$1;`, 
@@ -30,12 +38,16 @@ class Peticiones{
             `UPDATE Usuario SET name=$1, email=$2, password=$3 WHERE email=$4;`,
             [name, email, password, user]
         );
-        console.log(user);
-        console.log(name);
-        console.log(email);
-        console.log(password);
         return respuesta;
     }   
+    
+    async postLogin(email, password){
+        const respuesta = await database.query(
+            `SELECT login($1,$2)`, 
+            [email,password]
+        );
+        return respuesta;
+    }
 }
 
 const peticion = new Peticiones();

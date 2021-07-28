@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { DatabaseService } from './services/database.service';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { HomeComponent } from './components/home/home.component';
     InicioModule, 
     ReactiveFormsModule
   ],
-  providers: [DatabaseService],
+  providers: [DatabaseService, CookieService],
   bootstrap: [AppComponent], 
 })
 export class AppModule { }
